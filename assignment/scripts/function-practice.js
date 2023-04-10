@@ -118,3 +118,42 @@ console.log("Positive numbers returned in array:", returnAllPositives([0, -2, 2,
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Take a 10 item long array, then return a string in the format of a phone number.
+function createPhoneNumber(numbers){
+  let finalNumber = "(";
+  
+  if (numbers.length === 10) {
+    for (i = 0; i < 3; i++) {
+      if(numbers[i] >= 0 && numbers[i] <= 9) {
+        finalNumber += numbers[i];
+      } else {
+        return undefined
+      }
+    }
+    finalNumber += ") ";
+    for (i = 3; i < 6; i++) {
+      if(numbers[i] >= 0 && numbers[i] <= 9) {
+        finalNumber += numbers[i];
+      } else {
+        return undefined
+      }
+    }
+    finalNumber += "-";
+    for (i = 6; i < 10; i++) {
+      if(numbers[i] >= 0 && numbers[i] <= 9) {
+        finalNumber += numbers[i];
+      } else {
+        return undefined
+      }
+    }
+    return finalNumber;
+  }
+  // Not a valid number.
+  return undefined;
+}
+
+console.log("A proper phone number: " + createPhoneNumber([0, 1, 2 ,3 ,4 ,5 ,6 ,7 ,8 ,9]));
+console.log("A bad phone number is " + createPhoneNumber(["O", 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log("Another bad number : " + createPhoneNumber([1]));
+console.log("Yet another bad number: " + createPhoneNumber([10, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
