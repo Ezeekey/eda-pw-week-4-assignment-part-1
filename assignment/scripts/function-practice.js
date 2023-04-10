@@ -74,8 +74,8 @@ function find( value, array ){
   return false;
 }
 
-console.log("A successful find: ", find(2, [1, 0, 3, 2, 4]));
-console.log("A not successfull find: ", find("0", [0, 1, 2, 3]));
+console.log("A successful find: " + find(2, [1, 0, 3, 2, 4]));
+console.log("A not successfull find: " + find("0", [0, 1, 2, 3]));
 
 // ----------------------
 // Stretch Goals
@@ -92,11 +92,14 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( array ) {
   let sum = 0
-  // TODO: loop to add items
+  for (i of array) {
+    sum += i;
+  }
   return sum;
 }
+console.log("sumAll returns: " + sumAll([1, 2, 3, 4]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
