@@ -66,8 +66,16 @@ console.log("This is for an empty array: " + getLast([]));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for (item of array) {
+    if (item === value) {
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log("A successful find: ", find(2, [1, 0, 3, 2, 4]));
+console.log("A not successfull find: ", find("0", [0, 1, 2, 3]));
 
 // ----------------------
 // Stretch Goals
